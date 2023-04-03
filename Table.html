@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        table {
+            border: 1px solid rgb(207, 207, 207);
+            padding: 50px;
+        }
+
+        button {
+            margin-top: 50px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    Email:
+                </th>
+                <th>
+                    Phone:
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr>
+                <td>
+                    <input type="text">
+                </td>
+                <td>
+                    <input type="email">
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="addRow()"> Add Row </button>
+
+
+    <script>
+        'use strict';
+
+        function addRow() {
+            let tr = document.querySelectorAll('tr')[1];
+            let new_tr = tr.cloneNode(true);
+
+            tr.after(new_tr);
+        }
+
+    </script>
+</body>
+</html>
